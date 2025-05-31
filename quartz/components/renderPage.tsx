@@ -98,14 +98,6 @@ function renderTranscludes(
 
             node.children = [
               normalizeHastElement(blockNode, slug, transcludeTarget),
-              {
-                type: "element",
-                tagName: "a",
-                properties: { href: inner.properties?.href, class: ["internal", "transclude-src"] },
-                children: [
-                  { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
-                ],
-              },
             ]
           }
         } else if (blockRef?.startsWith("#") && page.htmlAst) {
@@ -141,14 +133,6 @@ function renderTranscludes(
             ...(page.htmlAst.children.slice(startIdx, endIdx) as ElementContent[]).map((child) =>
               normalizeHastElement(child as Element, slug, transcludeTarget),
             ),
-            {
-              type: "element",
-              tagName: "a",
-              properties: { href: inner.properties?.href, class: ["internal", "transclude-src"] },
-              children: [
-                { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
-              ],
-            },
           ]
         } else if (page.htmlAst) {
           // page transclude
@@ -171,14 +155,6 @@ function renderTranscludes(
             ...(page.htmlAst.children as ElementContent[]).map((child) =>
               normalizeHastElement(child as Element, slug, transcludeTarget),
             ),
-            {
-              type: "element",
-              tagName: "a",
-              properties: { href: inner.properties?.href, class: ["internal", "transclude-src"] },
-              children: [
-                { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
-              ],
-            },
           ]
         }
       }

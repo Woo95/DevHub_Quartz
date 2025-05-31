@@ -38,7 +38,13 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+        filterFn: (node) => {
+            const fileName = node.displayName
+            if (fileName?.includes("Do Not Open")) return false
+            return true
+        }
+    }),
   ],
   right: [
     Component.Graph(),
@@ -62,7 +68,15 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+        filterFn: (node) => {
+            const fileName = node.displayName
+            if (fileName?.includes("Do Not Open")) return false
+            return true
+        }
+    }),
   ],
-  right: [],
+right: [
+    Component.Graph(),
+  ],
 }
