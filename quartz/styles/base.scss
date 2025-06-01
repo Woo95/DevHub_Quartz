@@ -546,19 +546,6 @@ img {
   content-visibility: auto;
 }
 
-p {
-  align-items: center;
-}
-
-p > a {
-  display: inline-block;
-  text-decoration: underline;
-}
-
-p:has(> img) {
-  line-height: 0;
-}
-
 p > img + em {
   display: block;
   transform: translateY(-1rem);
