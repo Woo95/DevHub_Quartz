@@ -10,7 +10,7 @@ draft: false
 ---
 ## **Overview**
 
-Learn more about my **background**, **experience**, and **technical skills** through the pages below:
+Learn more about my **background**, **experience**, and **technical skills** through the pages below.
 - **[[Portfolios_Eng/01_Introduction/02_My Information|My Information]]**
 - **[[Portfolios_Eng/02_Game Projects/index.md|Game Projects]]**
 - **[[Portfolios_Eng/03_Technical Notes/index.md|Technical Notes]]**
@@ -20,8 +20,8 @@ Learn more about my **background**, **experience**, and **technical skills** thr
 
 Explore my **major work** — Discover my projects, libraries, and ideas.
 - **Projects**
-	- [[Self-Made Game Framework]]
-	- [[Italian Brainrot Survivor]]
+	- [[Portfolios_Eng/02_Game Projects/Self-Made Game Framework\|Self-Made Game Framework]]
+	- [[Portfolios_Eng/02_Game Projects/Italian Brainrot Survivors\|Italian Brainrot Survivors]]
 - **Technical Notes**
 	- [[MemoryPool Library]]
 	- [[Minecraft-Like Crafting System]]
