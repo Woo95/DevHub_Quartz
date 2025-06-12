@@ -1,15 +1,18 @@
-import { computePosition, flip, inline, shift } from "@floating-ui/dom"
+﻿import { computePosition, flip, inline, shift } from "@floating-ui/dom"
 import { normalizeRelativeURLs } from "../../util/path"
 import { fetchCanonical } from "./util"
 
 const p = new DOMParser()
 let activeAnchor: HTMLAnchorElement | null = null
-
+let id = ''
 async function mouseEnterHandler(
   this: HTMLAnchorElement,
   { clientX, clientY }: { clientX: number; clientY: number },
 ) {
+
+  // console.log("activeAnchor", activeAnchor)
   const link = (activeAnchor = this)
+
   if (link.dataset.noPopover === "true") {
     return
   }
@@ -26,16 +29,62 @@ async function mouseEnterHandler(
 
   function showPopover(popoverElement: HTMLElement) {
     clearActivePopover()
-    popoverElement.classList.add("active-popover")
-    setPosition(popoverElement as HTMLElement)
+    const href = link.href
+    const popoverInner = document.querySelector('.popover-inner')
 
-    if (hash !== "") {
-      const targetAnchor = `#popover-internal-${hash.slice(1)}`
-      const heading = popoverInner.querySelector(targetAnchor) as HTMLElement | null
-      if (heading) {
-        // leave ~12px of buffer when scrolling to a heading
-        popoverInner.scroll({ top: heading.offsetTop - 12, behavior: "instant" })
+    if (popoverInner) {
+      popoverInner.scrollTo({ top: 0, behavior: 'instant' })
+    }
+    
+    if (href.includes('#')) {
+      const lastHref = href.split('#').pop()
+      id = lastHref ?? ''
+
+
+      if (popoverElement) {
+        const popoverInner = popoverElement.querySelector('.popover-hint')
+        if (popoverInner && id) {
+          const directChildren = popoverInner.children
+          Array.from(directChildren).forEach(el => {
+            if (el instanceof HTMLElement) {
+              el.style.display = 'none'
+            }
+          })
+
+
+          Array.from(directChildren).forEach(el => {
+            if (el instanceof HTMLElement && el.id.includes(id)) {
+              el.style.display = 'block'
+            }
+          })
+
+          popoverElement.scrollTo({ top: 0, behavior: 'instant' })
+          popoverElement.classList.add("active-popover")
+          setPosition(popoverElement)
+        }
+    }
+  } else {
+    const popoverInner = popoverElement.querySelector('.popover-hint')
+    if (popoverInner) {
+      const directChildren = popoverInner.children
+      Array.from(directChildren).forEach(el => {
+        if (el instanceof HTMLElement) {
+          el.style.display = ''
+        }
+      })
+
+      popoverElement.classList.add("active-popover")
+      setPosition(popoverElement as HTMLElement)
+
+      if (hash !== "") {
+        const targetAnchor = `#popover-internal-${hash.slice(1)}`
+        const heading = popoverInner.querySelector(targetAnchor) as HTMLElement | null
+        if (heading) {
+          // leave ~12px of buffer when scrolling to a heading
+          popoverInner.scroll({ top: heading.offsetTop - 12, behavior: "instant" })
+        }
       }
+    }
     }
   }
 
@@ -93,10 +142,14 @@ async function mouseEnterHandler(
       normalizeRelativeURLs(html, targetUrl)
       // prepend all IDs inside popovers to prevent duplicates
       html.querySelectorAll("[id]").forEach((el) => {
-        const targetID = `popover-internal-${el.id}`
-        el.id = targetID
-      })
+        if (el instanceof HTMLElement) {
+          const targetID = `popover-internal-${el.id}`
+          el.id = targetID
+  
+        }
+      })  
       const elts = [...html.getElementsByClassName("popover-hint")]
+
       if (elts.length === 0) return
 
       elts.forEach((elt) => popoverInner.appendChild(elt))
@@ -110,7 +163,6 @@ async function mouseEnterHandler(
   if (activeAnchor !== this) {
     return
   }
-
   showPopover(popoverElement)
 }
 

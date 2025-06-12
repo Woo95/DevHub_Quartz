@@ -1,6 +1,19 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+p {
+  align-items: center;
+}
+
+p > a {
+  display: inline-block;
+  text-decoration: underline;
+}
+
+p:has(> img) {
+  line-height: 0;
+}
+
 blockquote.transclude > h1:first-of-type {
   display: none !important;
 }
