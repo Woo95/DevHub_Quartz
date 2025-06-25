@@ -3,7 +3,7 @@ title: 02_Game Projects
 draft: false
 ---
 
-# **Game Project Overview**
+# **Game Projects**
 
 This section showcases my game development projects, organized by language and tools.
 
