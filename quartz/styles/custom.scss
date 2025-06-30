@@ -17,3 +17,25 @@ p:has(> img) {
 blockquote.transclude > h1:first-of-type {
   display: none !important;
 }
+
+.center table {
+  width: 95%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.center table th,
+.center table td {
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+  vertical-align: top;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  max-width: 250px;
+  min-width: 0px;
+
+  line-height: 1.4;
+}

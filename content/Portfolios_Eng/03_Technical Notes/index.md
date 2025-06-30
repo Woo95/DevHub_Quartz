@@ -20,5 +20,3 @@ This section showcases my self-developed technical notes, organized by language 
 | C#           | [[Portfolios_Eng/03_Technical Notes/Camera Projection\|Camera Projection]]                           | Unity     | Orthographic Camera-Relative Object Setup                                                      | Solo     | 2023     |
 | C#           | [[Portfolios_Eng/03_Technical Notes/Minecraft-Like Crafting System\|Minecraft-Like Crafting System]] | Unity     | Easy Recipe Setup, <br>Flexible Crafting Algorithm                                             | Solo     | 2023     |
 | C#           | [[Portfolios_Eng/03_Technical Notes/RealTimeMovement\|RealTimeMovement]]                             | Unity     | Network, <br>Multiplayer                                                                       | Solo     | 2023     |
-
----

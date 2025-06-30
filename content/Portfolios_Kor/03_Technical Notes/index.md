@@ -20,5 +20,3 @@ draft: false
 | C#     | [[Portfolios_Kor/03_Technical Notes/Camera Projection\|카메라 투영]]                         | Unity   | 직교 카메라 기반 오브젝트 배치                                                                    | 개인     | 2023   |
 | C#     | [[Portfolios_Kor/03_Technical Notes/Minecraft-Like Crafting System\|마인크래프트 스타일 제작 시스템]] | Unity   | 간단한 레시피 설정, <br>유연한 제작 알고리즘                                                          | 개인     | 2023   |
 | C#     | [[Portfolios_Kor/03_Technical Notes/RealTimeMovement\|RealTimeMovement]]                | Unity   | 네트워크, <br>멀티플레이                                                                      | 개인     | 2023   |
-
----
