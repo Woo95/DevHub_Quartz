@@ -3,14 +3,8 @@ title: " "
 draft: false
 ---
 
-# Welcome to my Devhub!
+# Welcome to My Developer Hub!
+> *A space to document my game projects and technical notes.*
+> *게임 프로젝트와 기술 노트를 기록하는 공간입니다.*
 
-A growing archive that documents my "game project" and "technical notes".  
-> **[View in English](Portfolios_Eng\index.md)**
-
----
-
-# 저의 개발자 허브에 오신 것을 환영합니다!
-
-저의 "게임 프로젝트"와 "기술 노트"를 기록하는 성장형 아카이브입니다.
-> **[한국어로 보기](Portfolios_Kor\index.md)**
+**[ [[English/01_Introduction/index.md|English]] ] / [ [[Korean/01_도입/index.md|한국어]] ]**
